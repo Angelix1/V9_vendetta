@@ -37,7 +37,7 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
                     leading={<Icon source={getAssetId("ic_chat_bubble_16px")} />}
                     onPress={() => {
                         ActionSheet.hideActionSheet()
-//                         vendetta.metro.common.clipboard.setString(message.id)
+                        vendetta.metro.common.clipboard.setString(message?.author?.id ?? '')
                         showToast("Copied User ID to clipboard", getAssetId("toast_copy_link"))
                     }}
                 />)
