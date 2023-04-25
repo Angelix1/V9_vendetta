@@ -1,8 +1,8 @@
-/* 
-Shiet bruh, vendetta has no documentation, these code originated from
-https://github.com/aeongdesu/vdplugins/tree/main/plugins/ViewRaw
-with modification to only add one button for copy user id when long message press.
-*/
+
+// Shiet bruh, vendetta has no documentation, these code originated from
+// https://github.com/aeongdesu/vdplugins/tree/main/plugins/ViewRaw
+// with modification to only add one button for copy user id when long message press.
+
 import { before, after } from "@vendetta/patcher"
 import { getAssetIDByName as getAssetId } from "@vendetta/ui/assets"
 import { findByProps as getByProps, findByName } from "@vendetta/metro"
@@ -27,8 +27,23 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
 
             const message = msgProps?.props?.message ?? actionMessage?.message
 
-            if (!buttons || !message) return;
+
+            if (!buttons || !message) return
             console.log(message);
+
+            const navigator = () => (
+                <Navigator
+                    initialRouteName="RawPage"
+                    goBackOnBackPress
+                    screens={{
+                        RawPage: {
+                            title: "ViewRaw",
+                            headerLeft: getRenderCloseButton(() => Navigation.pop()),
+                            render: () => <RawPage message={message} />
+                        }
+                    }}
+                />
+            )
 
             buttons.push(
                 <FormRow
