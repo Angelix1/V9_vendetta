@@ -1,14 +1,14 @@
 {
-    "name": "AdditionalButtons",
-    "description": "Additional Buttons",
+    "name": "Additional Buttons v1",
+    "description": "Adds Additional Buttons for conviniences.",
     "authors": [
         {
             "name": "Angelix",
             "id": "692632336961110087"
-        }
+        },
     ],
     "main": "src/index.tsx",
     "vendetta": {
-        "icon": "ic_chat_bubble_16px"
+        "icon": "ic_locale_24px"
     }
 }
