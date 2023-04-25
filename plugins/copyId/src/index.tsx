@@ -30,7 +30,7 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
 
 
             if (!buttons || !message) return
-            console.log(message);
+            
             buttons.push(
                 <FormRow
                     label="Copy User Id"
