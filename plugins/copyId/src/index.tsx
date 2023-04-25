@@ -30,28 +30,13 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
 
             if (!buttons || !message) return
             console.log(message);
-/*
-            const navigator = () => (
-                <Navigator
-                    initialRouteName="RawPage"
-                    goBackOnBackPress
-                    screens={{
-                        RawPage: {
-                            title: "ViewRaw",
-                            headerLeft: getRenderCloseButton(() => Navigation.pop()),
-                            render: () => <RawPage message={message} />
-                        }
-                    }}
-                />
-            )
-*/
             buttons.push(
                 <FormRow
                     label="Copy User Id"
                     leading={<Icon source={getAssetId("ic_chat_bubble_16px")} />}
                     onPress={() => {
                         ActionSheet.hideActionSheet()
-                        clipboard.setString(message.id)
+//                         vendetta.metro.common.clipboard.setString(message.id)
                         showToast("Copied User ID to clipboard", getAssetId("toast_copy_link"))
                     }}
                 />)
