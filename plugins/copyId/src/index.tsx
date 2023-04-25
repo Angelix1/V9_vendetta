@@ -34,11 +34,21 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
             buttons.push(
                 <FormRow
                     label="Copy User Id"
-                    leading={<Icon source={getAssetId("ic_chat_bubble_16px")} />}
+                    leading={<Icon source={getAssetId("ic_copy_id")} />}
                     onPress={() => {
                         ActionSheet.hideActionSheet()
                         vendetta.metro.common.clipboard.setString(message?.author?.id ?? '')
                         showToast("Copied User ID to clipboard", getAssetId("toast_copy_link"))
+                    }}
+                />)
+            buttons.push(
+                <FormRow
+                    label="Copy User Id and Mention"
+                    leading={<Icon source={getAssetId("ic_copy_id")} />}
+                    onPress={() => {
+                        ActionSheet.hideActionSheet()
+                        vendetta.metro.common.clipboard.setString(`${message?.author?.id ?? ''} <@${message?.author?.id ?? ''}>`)
+                        showToast("Copied User to clipboard", getAssetId("toast_copy_link"))
                     }}
                 />)
         })
