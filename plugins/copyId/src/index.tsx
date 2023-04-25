@@ -17,7 +17,6 @@ const { default: Navigator, getRenderCloseButton } = DiscordNavigator
 const Icon = findByName("Icon")
 const { FormRow } = Forms
 import { showToast } from "@vendetta/ui/toasts"
-import { getAssetIDByName as getAssetId } from "@vendetta/ui/assets"
 
 const unpatch = before("openLazy", ActionSheet, (ctx) => {
     const [component, args, actionMessage] = ctx
