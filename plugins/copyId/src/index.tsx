@@ -8,7 +8,7 @@ import { getAssetIDByName as getAssetId } from "@vendetta/ui/assets"
 import { findByProps as getByProps, findByName } from "@vendetta/metro"
 import { React } from "@vendetta/metro/common"
 import { Forms } from "@vendetta/ui/components"
-import RawPage from "./RawPage"
+// import RawPage from "./RawPage"
 
 const ActionSheet = getByProps("openLazy", "hideActionSheet")
 const Navigation = getByProps("push", "pushLazy", "pop")
@@ -30,7 +30,7 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
 
             if (!buttons || !message) return
             console.log(message);
-
+/*
             const navigator = () => (
                 <Navigator
                     initialRouteName="RawPage"
@@ -44,7 +44,7 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
                     }}
                 />
             )
-
+*/
             buttons.push(
                 <FormRow
                     label="Copy User Id"
