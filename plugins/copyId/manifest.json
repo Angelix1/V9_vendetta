@@ -5,7 +5,7 @@
         {
             "name": "Angelix",
             "id": "692632336961110087"
-        },
+        }
     ],
     "main": "src/index.tsx",
     "vendetta": {
