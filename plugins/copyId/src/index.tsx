@@ -3,24 +3,23 @@
 // https://github.com/aeongdesu/vdplugins/tree/main/plugins/ViewRaw
 // with modification to only add one button for copy user id when long message press.
 
-const { before, after } = require("@vendetta/patcher")
-const { getAssetId } = require("@vendetta/ui/assets")
-const getAssetIDByName = getAssetId;
-const { findByProps, findByName } = require("@vendetta/metro")
-const getByProps = findByProps;
-const { React } = require("@vendetta/metro/common")
-const { Forms } = require("@vendetta/ui/components")
+import { before, after } from "@vendetta/patcher"
+import { getAssetIDByName as getAssetId } from "@vendetta/ui/assets"
+import { findByProps as getByProps, findByName } from "@vendetta/metro"
+import { React } from "@vendetta/metro/common"
+import { Forms } from "@vendetta/ui/components"
+import RawPage from "./RawPage"
 
 const ActionSheet = getByProps("openLazy", "hideActionSheet")
 const Navigation = getByProps("push", "pushLazy", "pop")
 const DiscordNavigator = getByProps("getRenderCloseButton")
-const { Navigator, getRenderCloseButton } = DiscordNavigator;
+const { default: Navigator, getRenderCloseButton } = DiscordNavigator
 const Icon = findByName("Icon")
 const { FormRow } = Forms
 
 const unpatch = before("openLazy", ActionSheet, (ctx) => {
     const [component, args, actionMessage] = ctx
-    if (args !== "MessageLongPressActionSheet") return;
+    if (args !== "MessageLongPressActionSheet") return
     component.then(instance => {
         const unpatch = after("default", instance, (_, component) => {
             React.useEffect(() => () => { unpatch() }, []) // omg!!!!!!!!!!!!!
@@ -29,7 +28,7 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
             const message = msgProps?.props?.message ?? actionMessage?.message
 
 
-            if (!buttons || !message) return;
+            if (!buttons || !message) return
             console.log(message);
 
             const navigator = () => (
@@ -60,4 +59,4 @@ const unpatch = before("openLazy", ActionSheet, (ctx) => {
     })
 })
 
-module.exports = () => unpatch();
+export const onUnload = () => unpatch()
