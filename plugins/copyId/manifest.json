@@ -1,0 +1,9 @@
+{
+    "name": "AdditionalButtons",
+    "description": "Additional Buttons",
+    "authors": [],
+    "main": "index.js",
+    "vendetta": {
+        "icon": "ic_chat_bubble_16px"
+    }
+}
