@@ -101,7 +101,7 @@ export const onLoad = () => {
             }
           ]
         }
-      ]
+      ],
       type: 1,
       applicationId: "-1",
       inputType: 1,
@@ -119,6 +119,8 @@ export const onLoad = () => {
   );
 
 }
+  
+
 
 export const onUnload = () => {
     for (const unregisterCommands of CMD) unregisterCommands()
