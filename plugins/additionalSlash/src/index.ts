@@ -5,7 +5,6 @@
 */
 import { logger } from "@vendetta";
 import { registerCommand } from "@vendetta/commands";
-// available in vendetta-types, but it crashes
 enum ApplicationCommandOptionType {
     SUB_COMMAND = 1,
     SUB_COMMAND_GROUP,
@@ -131,7 +130,7 @@ export const onLoad = () => {
         return { content: 'await e621(true, )'};
       },
     })
-  );
+//   );
 
 }
   
