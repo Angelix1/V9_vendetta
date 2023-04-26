@@ -1,6 +1,7 @@
 /* 
   Reference
-  https://github.com/BreadoWebTech/breadoplugs/blob/master/plugins/quotes/src
+  https://github.com/BreadoWebTech/breadoplugs/blob/master/plugins/quotes
+  https://github.com/aeongdesu/vdplugins/blob/main/plugins/Dislate
 */
 import { logger } from "@vendetta";
 import { registerCommand } from "@vendetta/commands";
@@ -67,6 +68,10 @@ async function e621(random = true, query, rating = 's') {
 function pluginLog(...a) {
   console.log(`[ ANGEL ]`, ...a)
 }
+const Format = (text: string, regex?: boolean): string => text
+    .split(regex ? /(?=[A-Z])/ : "_")
+    .map((e: string) => e[0].toUpperCase() + e.slice(1))
+    .join(" ")
 
 export const onLoad = () => {
   CMD.push(
@@ -100,15 +105,18 @@ export const onLoad = () => {
           type: ApplicationCommandOptionType.STRING as number,
           choices: [
             {
-              name: "Explicit",
+              name: Format("Explicit"),
+              displayName: Format("explicit"),
               value: "e"
             },
             {
-              name: "Questionable",
+              name: Format("Questionable"),
+              displayName: Format("questionable"),
               value: "q"
             },
             {
-              name: "Safe",
+              name: Format("Safe"),
+              displayName: Format("safe"),
               value: "s"
             }
           ]
