@@ -4,18 +4,31 @@
 */
 import { logger } from "@vendetta";
 import { registerCommand } from "@vendetta/commands";
+// available in vendetta-types, but it crashes
 enum ApplicationCommandOptionType {
     SUB_COMMAND = 1,
     SUB_COMMAND_GROUP,
     STRING,
     INTEGER,
     BOOLEAN,
-    USER6,
+    USER,
     CHANNEL,
     ROLE,
     MENTIONABLE,
     NUMBER,
     ATTACHMENT
+}
+enum ApplicationCommandInputType {
+    BUILT_IN,
+    BUILT_IN_TEXT,
+    BUILT_IN_INTEGRATION,
+    BOT,
+    PLACEHOLDER
+}
+enum ApplicationCommandType {
+    CHAT = 1,
+    USER,
+    MESSAGE
 }
 let CMD = [];
 
@@ -69,22 +82,22 @@ export const onLoad = () => {
           description: "generates random snippets",
           displayDescription: "generates random snippets",
           required: true,
-          type: ApplicationCommandOptionType.BOOLEAN
+          type: ApplicationCommandOptionType.BOOLEAN as number
         },
         {
           name: "query",
           displayName: "query",
           description: "query",
           displayDescription: "query",
-          inputType: ApplicationCommandInputType.BUILT_IN_TEXT as string,
-          type: ApplicationCommandOptionType.STRING
+          inputType: ApplicationCommandInputType.BUILT_IN_TEXT as number,
+          type: ApplicationCommandOptionType.STRING as number
         },
         {
           name: "rating",
           displayName: "rating",
           description: "rating",
           displayDescription: "rating",
-          type: ApplicationCommandOptionType.STRING,
+          type: ApplicationCommandOptionType.STRING as number,
           choices: [
             {
               name: "Explicit",
@@ -101,9 +114,9 @@ export const onLoad = () => {
           ]
         }
       ],
-      type: 1,
+      type: ApplicationCommandType.CHAT as number,
       applicationId: "",
-      inputType: ApplicationCommandInputType.BUILT_IN_TEXT as string,
+      inputType: ApplicationCommandInputType.BUILT_IN_TEXT as number,
       execute: async () => {
 
         const isRandom = args[0].value as boolean
