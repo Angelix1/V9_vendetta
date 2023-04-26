@@ -65,9 +65,6 @@ async function e621(random = true, query, rating = 's') {
   return picker;
 };
 
-function pluginLog(...a) {
-  console.log(`[ ANGEL ]`, ...a)
-}
 const Format = (text: string, regex?: boolean): string => text
     .split(regex ? /(?=[A-Z])/ : "_")
     .map((e: string) => e[0].toUpperCase() + e.slice(1))
@@ -130,8 +127,8 @@ export const onLoad = () => {
         const isRandom = args[0].value as boolean
         const isQuery = args[1].value as string
         const isRating = args[2].value as string
-
-        pluginLog(isRandom, isQuery, isRating)
+        console.log(`[ ANGEL ]`)
+        console.log(args)
 
         return { content: 'await e621(true, )'};
       },
