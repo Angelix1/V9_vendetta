@@ -1,0 +1,14 @@
+{
+    "name": "Additional Slash v0.0.1",
+    "description": "Adds Additional Slash for conviniences.",
+    "authors": [
+        {
+            "name": "Angelix",
+            "id": "692632336961110087"
+        }
+    ],
+    "main": "src/index.ts",
+    "vendetta": {
+        "icon": "ic_locale_24px"
+    }
+}
