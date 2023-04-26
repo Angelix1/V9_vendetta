@@ -71,8 +71,7 @@ const Format = (text: string, regex?: boolean): string => text
     .join(" ")
 
 export const onLoad = () => {
-  CMD.push(
-    registerCommand({
+  CMD = registerCommand({
       name: "e621",
       displayName: "e621",
       description: "generates a e621.",
@@ -122,8 +121,7 @@ export const onLoad = () => {
       type: ApplicationCommandType.CHAT as number,
       applicationId: "-1",
       inputType: ApplicationCommandInputType.BUILT_IN_TEXT as number,
-      execute: async () => {
-
+      async execute(args, context) {
         const isRandom = args[0].value as boolean
         const isQuery = args[1].value as string
         const isRating = args[2].value as string
@@ -140,5 +138,6 @@ export const onLoad = () => {
 
 
 export const onUnload = () => {
-    for (const unregisterCommands of CMD) unregisterCommands()
+    //for (const unregisterCommands of CMD) unregisterCommands()
+  CMD?.()
 }
