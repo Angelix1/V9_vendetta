@@ -120,7 +120,7 @@ export const onLoad = () => {
         }
       ],
       type: ApplicationCommandType.CHAT as number,
-      applicationId: "",
+      applicationId: "-1",
       inputType: ApplicationCommandInputType.BUILT_IN_TEXT as number,
       execute: async () => {
 
