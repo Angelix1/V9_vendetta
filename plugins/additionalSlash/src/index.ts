@@ -76,14 +76,14 @@ export const onLoad = () => {
           displayName: "query",
           description: "query",
           displayDescription: "query",
-          required: false,
+          inputType: ApplicationCommandInputType.BUILT_IN_TEXT as string,
           type: ApplicationCommandOptionType.STRING
         },
         {
           name: "rating",
           displayName: "rating",
-          description: "image rating",
-          displayDescription: "image rating",
+          description: "rating",
+          displayDescription: "rating",
           type: ApplicationCommandOptionType.STRING,
           choices: [
             {
@@ -102,8 +102,8 @@ export const onLoad = () => {
         }
       ],
       type: 1,
-      applicationId: "-1",
-      inputType: 1,
+      applicationId: "",
+      inputType: ApplicationCommandInputType.BUILT_IN_TEXT as string,
       execute: async () => {
 
         const isRandom = args[0].value as boolean
