@@ -66,25 +66,24 @@ export const onLoad = () => {
         {
           name: "random",
           displayName: "random",
-          description: "Generates Random Snippets",
-          displayDescription: "Generates Random Snippets",
+          description: "generates random snippets",
+          displayDescription: "generates random snippets",
           required: true,
           type: ApplicationCommandOptionType.BOOLEAN
         },
         {
           name: "query",
           displayName: "query",
-          description: "Query",
-          displayDescription: "Query",
+          description: "query",
+          displayDescription: "query",
           required: false,
           type: ApplicationCommandOptionType.STRING
         },
         {
           name: "rating",
           displayName: "rating",
-          description: "Image Rating",
-          displayDescription: "Image Rating",
-          required: true,
+          description: "image rating",
+          displayDescription: "image rating",
           type: ApplicationCommandOptionType.STRING,
           choices: [
             {
