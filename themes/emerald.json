@@ -1,0 +1,33 @@
+{
+  "name": "Midnight-Emerald",
+  "description": "Midnight Emerald",
+  "authors": [
+    {
+      "name": "Angelix",
+      "id": "692632336961110087"
+    },
+  ],
+  "spec": 2,
+  "semanticColors": {
+    "TEXT_MUTED": ["##003E1E"],
+    "INTERACTIVE_NORMAL": [ "#0a823c" ],
+    "BACKGROUND_PRIMARY": [ "transparent" ],
+    "BACKGROUND_SECONDARY": [ "#001E1E" ],
+    "BACKGROUND_SECONDARY_ALT": [ "#003E1E" ],
+    "BACKGROUND_TERTIARY": [ "transparent" ],
+    "BACKGROUND_ACCENT": [ "#004E1E" ],
+    "BACKGROUND_FLOATING": [ "#001E1E" ],
+    "BACKGROUND_MOBILE_PRIMARY": [ "transparent" ],
+    "BACKGROUND_MOBILE_SECONDARY": [ "#001E1E" ],
+    "BACKGROUND_NESTED_FLOATING": [ "#001E1E" ],
+    "BACKGROUND_MODIFIER_SELECTED": [ "#298565" ],
+    "BACKGROUND_MODIFIER_ACCENT": ["#002619"],
+    "SCROLLBAR_THIN_THUMB": [ "#26273b" ], 
+    "CHANNELTEXTAREA_BACKGROUND": [ "#002b15" ],
+    "CHANNELS_DEFAULT": [ "#9E8376" ],
+    "TEXT_LINK": [ "#ffed63" ],
+    "TEXT_DANGER": [ "#ff770f" ],
+    "CHANNEL_ICON": [ "#00a393" ],
+    "CHAT_BACKGROUND": [ "transparent" ]
+  },
+}
