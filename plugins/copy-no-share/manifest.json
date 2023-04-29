@@ -1,0 +1,14 @@
+{
+    "name": "Copy, No Share v0.0.88",
+    "description": "Replace share button on image preview with a copy one",
+    "authors": [
+        {
+            "name": "Angelix",
+            "id": "692632336961110087"
+        }
+    ],
+    "main": "index.tsx",
+    "vendetta": {
+        "icon": "ic_message_copy"
+    }
+}
