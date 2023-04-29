@@ -41,7 +41,7 @@ const unpatch = before("openLazy", ActionSheet, ([component, key]) => {
           onPress={() => {
             ActionSheet.hideActionSheet()
             clipboard.setString(url)
-            showToast("Copied User to clipboard", getAssetIDByName("toast_copy_link"))
+            showToast("Image Url Copied", getAssetIDByName("toast_copy_link"))
           }}
           />
       );
